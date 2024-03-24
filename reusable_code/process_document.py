@@ -7,7 +7,9 @@ from google.cloud import documentai
 from google.cloud.documentai_v1 import Document
 
 from exceptions import DocAIException  # Importing custom exception
-from read_pdf_or_image_files import read_files_content  # Importing file reading function
+from read_pdf_or_image_files import (
+    read_files_content,
+)  # Importing file reading function
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -63,13 +65,17 @@ class CustomGoogleDocAIProcessor:
                 logging.info("Requesting using processor option...")
                 request = documentai.ProcessRequest(
                     name=self.processor_name,
-                    raw_document=documentai.RawDocument(content=file_content, mime_type=mime_type),
+                    raw_document=documentai.RawDocument(
+                        content=file_content, mime_type=mime_type
+                    ),
                     process_options=self.processor_options,  # Set the processor options
                 )
             else:
                 request = documentai.ProcessRequest(
                     name=self.processor_name,
-                    raw_document=documentai.RawDocument(content=file_content, mime_type=mime_type)
+                    raw_document=documentai.RawDocument(
+                        content=file_content, mime_type=mime_type
+                    ),
                 )
 
             # Process the document

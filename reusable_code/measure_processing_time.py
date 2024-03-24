@@ -25,13 +25,17 @@ def measure_time(processor_name, func, *args, **kwargs):
     end_time = time.time()  # Record end time
     execution_time = end_time - start_time  # Calculate elapsed time
     # Log the elapsed time along with function name and processor name
-    logging.info(f'Time elapsed for {func.__name__}: {execution_time}, processor name {processor_name}')
+    logging.info(
+        f"Time elapsed for {func.__name__}: {execution_time}, processor name {processor_name}"
+    )
     # Create a dictionary with execution information
     data = {
         "info": kwargs,  # Pass additional information
         "processor_name": processor_name,  # Store processor name
         "elapsed_time": execution_time,  # Store elapsed time
-        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Record creation time
+        "created_at": datetime.now().strftime(
+            "%Y-%m-%d %H:%M:%S"
+        ),  # Record creation time
     }
     return result, data  # Return result and execution data
 

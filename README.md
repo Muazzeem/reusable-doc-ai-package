@@ -59,5 +59,3 @@ your_processor_name = projects/<PROJECT_ID>/locations/us/processors/<processor-i
 `
 
 Make sure to replace `your_location`, `your_processor_name`, `your_processor_options`, and `path_to_your_document` with appropriate values.
-
-

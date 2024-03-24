@@ -1,7 +1,8 @@
-import os
 import logging
-from pikepdf import Pdf
+import os
 from io import BytesIO
+
+from pikepdf import Pdf
 
 
 def read_files_content(file_path, extract_page_number):
@@ -20,7 +21,7 @@ def read_files_content(file_path, extract_page_number):
     """
     file_extension = os.path.splitext(file_path)[1]
     try:
-        if file_extension == '.pdf':
+        if file_extension == ".pdf":
             # Open the PDF file
             pdf = Pdf.open(file_path)
 
